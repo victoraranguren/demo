@@ -1,18 +1,20 @@
+import { Link } from "react-router-dom";
+
 export const Navbar = () => {
   return (
     <nav className="bg-blue-600 p-6 flex justify-between">
-      <a href="/" className="text-gray-100 text-xl">
+      <Link to="/" className="text-gray-100 text-xl font-semibold">
         IsoAcademy
-      </a>
+      </Link>
       <div className="inline-flex items-center">
-        <a href="/cursos" className="text-gray-100">
+        <Link to="/cursos" className="text-gray-100">
           Cursos
-        </a>
+        </Link>
       </div>
       <div className="inline-flex items-center">
-        <a href="#" className="text-gray-100">
-          Iniciar Sesión
-        </a>
+        <Link to="/perfil" className="text-gray-100">
+          Perfil
+        </Link>
       </div>
     </nav>
   );
