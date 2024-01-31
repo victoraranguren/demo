@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import fetchData from "../utils/fetchData";
+import { Course } from "../utils/types.d";
 
 export const Courses = () => {
   const [courses, setCourses] = useState([]);
@@ -22,10 +23,11 @@ export const Courses = () => {
       <h1 className="text-3xl font-bold">Cursos</h1>
 
       <ul>
-        {courses?.map((course) => {
+        {courses?.map((course: Course) => {
           return (
             <li key={course.id}>
               {course.name} - {course.tutor} - {course.category}
+              <img src="http://localhost:5173/assets/course-poster.png" alt="" />
             </li>
           );
         })}
