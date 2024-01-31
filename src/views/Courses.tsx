@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import fetchData from "../utils/fetchData";
 import { Course } from "../utils/types.d";
+import "./Courses.css";
 
 export const Courses = () => {
   const [courses, setCourses] = useState([]);
@@ -20,18 +21,22 @@ export const Courses = () => {
 
   return (
     <div className="container p-8 mx-auto">
-      <h1 className="text-3xl font-bold">Cursos</h1>
+      <h1 className="text-4xl font-bold mb-10">Cursos</h1>
 
-      <ul>
+      <div className="flex flex-row flex-wrap gap-4">
         {courses?.map((course: Course) => {
           return (
-            <li key={course.id}>
-              {course.name} - {course.tutor} - {course.category}
+            <div key={course.id} className="card__body flex flex-col rounded-xl	overflow-hidden bg-white">
               <img src="http://localhost:5173/assets/course-poster.png" alt="" />
-            </li>
+              <div className="flex flex-col p-3">
+                <h3>{course.name}</h3>
+                <h3>{course.tutor} </h3>
+                <h3> {course.category}</h3>
+              </div>
+            </div>
           );
         })}
-      </ul>
+      </div>
     </div>
   );
 };
