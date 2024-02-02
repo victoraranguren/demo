@@ -1,6 +1,4 @@
 import { NavLink, useParams } from "react-router-dom";
-import * as Accordion from "@radix-ui/react-accordion";
-
 import fetchData from "../utils/fetchData";
 import { useEffect, useState } from "react";
 import { Course as ICourse } from "../utils/types";
@@ -43,14 +41,6 @@ export const Player = () => {
             deleniti veniam? Nulla, excepturi?
           </p>
         </div>
-        <Accordion.Root>
-          <Accordion.Item>
-            <Accordion.Header>
-              <Accordion.Trigger />
-            </Accordion.Header>
-            <Accordion.Content />
-          </Accordion.Item>
-        </Accordion.Root>
       </div>
     </div>
   );
