@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export const Navbar = () => {
   return (
@@ -7,17 +7,17 @@ export const Navbar = () => {
         IsoAcademy
       </Link>
       <div className="inline-flex items-center ml-0 mr-auto">
-        <Link to="/cursos" className="text-gray-100 mr-8">
+        <NavLink to="/cursos" className="text-gray-100 mr-8">
           Cursos
-        </Link>
-        <Link to="/cursos" className="text-gray-100">
+        </NavLink>
+        <NavLink to="/cursos" className="text-gray-100">
           Talleres
-        </Link>
+        </NavLink>
       </div>
       <div className="inline-flex items-center">
-        <Link to="/perfil" className="text-gray-100">
+        <NavLink to="/perfil" className="text-gray-100">
           Perfil
-        </Link>
+        </NavLink>
       </div>
     </nav>
   );
