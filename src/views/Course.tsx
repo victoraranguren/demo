@@ -20,7 +20,7 @@ export const Course = () => {
   }, []);
 
   return (
-    <div className="container p-8 mx-auto">
+    <div className="container p-6 mx-auto">
       <div className="flex flex-row gap-4 justify-between">
         <div className="info h-fit inline-block p-6 bg-white rounded-xl">
           <h1 className="text-4xl font-bold">{course.name}</h1>

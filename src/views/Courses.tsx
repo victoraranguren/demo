@@ -20,7 +20,7 @@ export const Courses = () => {
   }, []);
 
   return (
-    <div className="container p-8 mx-auto">
+    <div className="container p-6 mx-auto">
       <h1 className="text-4xl font-bold mb-10">Cursos</h1>
 
       <div className="flex flex-row flex-wrap gap-4">

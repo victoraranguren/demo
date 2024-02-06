@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Course as ICourse } from "../utils/types";
 
 import ReactPlayer from "react-player/lazy";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../components/ui/Accordion";
 
 export const Player = () => {
   const { id } = useParams();
@@ -22,7 +23,7 @@ export const Player = () => {
   }, []);
 
   return (
-    <div className="container p-8 mx-auto">
+    <div className="container p-6 mx-auto">
       <div className="flex flex-row gap-4 justify-between">
         <div className="info flex flex-column flex-wrap gap-4 w-3/4 h-fit p-6 bg-white rounded-xl">
           <h1 className="w-auto text-4xl font-bold inline-block">{course.name}</h1>
@@ -39,6 +40,65 @@ export const Player = () => {
             deleniti veniam? Nulla, excepturi?
           </p>
         </div>
+        <Accordion type="single" collapsible className="w-full h-fit p-6 bg-white rounded-xl">
+          <AccordionItem value="item-1">
+            <AccordionTrigger>Sección 1</AccordionTrigger>
+            <NavLink to="">
+              <AccordionContent>Clase 1</AccordionContent>
+            </NavLink>
+            <NavLink to="">
+              <AccordionContent>Clase 2</AccordionContent>
+            </NavLink>
+            <NavLink to="">
+              <AccordionContent>Clase 3</AccordionContent>
+            </NavLink>
+          </AccordionItem>
+          <AccordionItem value="item-2">
+            <AccordionTrigger>Sección 2</AccordionTrigger>
+            <NavLink to="">
+              <AccordionContent>Clase 1</AccordionContent>
+            </NavLink>
+            <NavLink to="">
+              <AccordionContent>Clase 2</AccordionContent>
+            </NavLink>
+            <NavLink to="">
+              <AccordionContent>Clase 3</AccordionContent>
+            </NavLink>
+          </AccordionItem>
+          <AccordionItem value="item-3">
+            <AccordionTrigger>Sección 2</AccordionTrigger>
+            <NavLink to="">
+              <AccordionContent>Clase 1</AccordionContent>
+            </NavLink>
+            <NavLink to="">
+              <AccordionContent>Clase 2</AccordionContent>
+            </NavLink>
+            <NavLink to="">
+              <AccordionContent>Clase 3</AccordionContent>
+            </NavLink>
+            <NavLink to="">
+              <AccordionContent>Clase 4</AccordionContent>
+            </NavLink>
+          </AccordionItem>
+          <AccordionItem value="item-4">
+            <AccordionTrigger>Sección 4</AccordionTrigger>
+            <NavLink to="">
+              <AccordionContent>Clase 1</AccordionContent>
+            </NavLink>
+            <NavLink to="">
+              <AccordionContent>Clase 2</AccordionContent>
+            </NavLink>
+            <NavLink to="">
+              <AccordionContent>Clase 3</AccordionContent>
+            </NavLink>
+            <NavLink to="">
+              <AccordionContent>Clase 4</AccordionContent>
+            </NavLink>
+            <NavLink to="">
+              <AccordionContent>Clase 5</AccordionContent>
+            </NavLink>
+          </AccordionItem>
+        </Accordion>
       </div>
     </div>
   );
