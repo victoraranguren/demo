@@ -8,7 +8,7 @@ function App() {
         <p className="my-4 text-lg text-slate-600 dark:text-slate-400">
           La familia que cuida, aprende y emprende en el metaverso.
         </p>
-        <button className="p-2 bg-blue-600 rounded text-zinc-50">Comienza a aprender GRATIS</button>
+        <button className="p-2 bg-blue-600 rounded text-zinc-50">Comienza a aprender</button>
       </div>
     </div>
   );
