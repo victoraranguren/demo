@@ -1,4 +1,4 @@
-import App from "../App";
+import Home from "../views/Home";
 import { Courses } from "../views/Courses";
 import { Account } from "../views/Account";
 import { Course } from "../views/Course";
@@ -7,7 +7,7 @@ import { Player } from "../views/Player";
 const routes = [
   {
     path: "/",
-    element: <App />,
+    element: <Home />,
   },
   {
     path: "/cursos",
