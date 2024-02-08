@@ -1,8 +1,9 @@
-import Home from "../views/Home";
+import { Home } from "../views/Home";
 import { Courses } from "../views/Courses";
 import { Account } from "../views/Account";
 import { Course } from "../views/Course";
 import { Player } from "../views/Player";
+import { Login } from "../views/Login";
 
 const routes = [
   {
@@ -20,6 +21,10 @@ const routes = [
   {
     path: "/cursos/:id/:section",
     element: <Player />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
   {
     path: "/perfil",
