@@ -1,7 +1,10 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { createClient } from "@supabase/supabase-js";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
+import { useStore } from "../store/authStore";
 import { redirect } from "react-router-dom";
 
 const supabase = createClient(
@@ -10,7 +13,11 @@ const supabase = createClient(
 );
 
 export const Login = () => {
-  const [session, setSession] = useState(null);
+  const { session } = useStore();
+  const setSession = useStore((state) => state.setSession);
+
+  const navigate = useNavigate();
+
   const handleClick = async () => {
     async function signOut() {
       const { error } = await supabase.auth.signOut();
@@ -26,11 +33,20 @@ export const Login = () => {
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
+      console.log(session);
       setSession(session);
     });
 
     return () => subscription.unsubscribe();
   }, []);
+
+  useEffect(() => {
+    if (session !== null) {
+      console.log(session);
+      navigate("/");
+    }
+  }, [session]);
+
   return (
     <div className="container w-auto m-12 p-8 my-12 sm:w-96 sm:mx-auto  rounded-xl bg-white ">
       {!session ? (

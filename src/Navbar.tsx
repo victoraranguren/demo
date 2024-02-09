@@ -1,6 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
+import { useStore } from "./store/authStore";
 
 export const Navbar = () => {
+  const { session } = useStore();
+
   return (
     <nav className="bg-blue-600 p-2 flex flex-wrap justify-between">
       <Link to="/" className="p-2 text-gray-100 text-xl font-semibold mr-4">
@@ -15,15 +18,20 @@ export const Navbar = () => {
         </NavLink>
       </div>
       <div className="inline-flex items-center gap-4 ">
-        <NavLink to="/login" className="py-1 px-2 text-gray-100 rounded border border-gray-300">
-          Crear cuenta
-        </NavLink>
-        <NavLink to="/login" className="py-1 px-2 text-gray-100 rounded bg-green-600">
-          Iniciar sesión
-        </NavLink>
-        <NavLink to="/perfil" className="py-1 px-2 text-gray-100">
-          Perfil
-        </NavLink>
+        {!session ? (
+          <>
+            <NavLink to="/login" className="py-1 px-2 text-gray-100 rounded border border-gray-300">
+              Crear cuenta
+            </NavLink>
+            <NavLink to="/login" className="py-1 px-2 text-gray-100 rounded bg-green-600">
+              Iniciar sesión
+            </NavLink>
+          </>
+        ) : (
+          <NavLink to="/perfil" className="py-1 px-2 text-gray-100">
+            Perfil
+          </NavLink>
+        )}
       </div>
     </nav>
   );
