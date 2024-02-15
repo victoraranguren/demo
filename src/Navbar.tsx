@@ -1,8 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
-import { useStore } from "./store/authStore";
+import { UserAuth } from "./context/AuthContext";
 
 export const Navbar = () => {
-  const { session } = useStore();
+  const { session } = UserAuth();
 
   return (
     <nav className="bg-blue-600 p-2 flex flex-wrap justify-between">

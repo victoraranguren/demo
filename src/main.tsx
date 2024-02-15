@@ -1,12 +1,6 @@
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import { Router } from "./router";
+import App from "./App";
 import "./index.css";
-import { Navbar } from "./Navbar.tsx";
+import { AuthContextProvider } from "./context/AuthContext";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <BrowserRouter>
-    <Navbar />
-    <Router />
-  </BrowserRouter>
-);
+ReactDOM.createRoot(document.getElementById("root")!).render(<AuthContextProvider><App/></AuthContextProvider>);
